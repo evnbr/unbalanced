@@ -1,6 +1,3 @@
-<!-- {{title}} -->
-<!-- {{body}} -->
-
 	<div class="section-14">
 		<div class="ads">
 			<div class="ad dc" id="board1-970x66"></div>
@@ -65,16 +62,16 @@
 						<ul class="list-ext-9">
 							<li class="first">
 								{{#article}}
-									<h2 style="min-height: 62px">
-										<a href="{{link}}">
-											{{title}}
-										</a>
-									</h2>
 									<p class="media">
 										<a href="{{link}}">
 											<img src="{{image}}" alt="" width="212" >
 										</a>
 									</p>
+									<h2>
+										<a href="{{link}}">
+											{{title}}
+										</a>
+									</h2>
 									<p class="summary">
 										{{{content}}}
 									</p>
@@ -118,7 +115,7 @@
 	               <div class="section-pr">
 	                    <p class="day">Today</p>
 	                    <p class="media"><img src="http://global.fncstatic.com/static/v/all/img/weather/icons_24x24/97.png" style="width: 24px; display: inline; opacity: 1;"></p>
-	                    <p class="current">45°</p>
+	                    <p class="current">45&deg;</p>
 	               </div>  </li>
 	     	</ul>
 	     	<div>  <form action="#" method="get">
@@ -133,7 +130,7 @@
 		               </div>
 		          	</fieldset>
 		     	</form>
-		        <p class="details"><a href="/weather/your-weather/index.html">Detailed Forecast</a><span>&nbsp;›</span></p>
+		        <p class="details"><a href="/weather/your-weather/index.html">Detailed Forecast</a><span>&nbsp;&#8250;</span></p>
 		    </div>  </div>   <div class="advert">
 	        <div class="ad off" id="servpro-292x30"></div>
 	    </div>
@@ -214,46 +211,24 @@
 
 						<span class="ob_org_header"></span>
 						<ul>
-							<li class="odb_li ob-recIdx-0  ob-odd">
-    	
-								<div class="ob-text-content">
-          							<a target="_self" onclick="" href="http://video.foxbusiness.com/v/2885728822001/stock-market-bubble-ahead/" onmousedown="this.href='http://traffic.outbrain.com/network/redir?key=fadd818eb0306c9b19354fcfb3756ba5&amp;rdid=89310589&amp;type=ORL_/NA_ny&amp;in-site=false&amp;idx=0&amp;req_id=3b47cdaf687e4596c212782448d87db2&amp;agent=blog_JS_rec&amp;recMode=8&amp;reqType=2&amp;wid=133&amp;imgType=0&amp;refPub=296&amp;prs=false&amp;scp=false&amp;origSrc=58747';" rel="" class="rec-link">
-          								Stock market bubble ahead?
-          							</a>
-    								<span class="ob_txtual_Icon">
-										<img class="textual-video-img" src="http://www.foxnews.com/i/redes/icon-video.gif" onerror="this.style.display=\'none\'">
-									</span>
-									<span class="ob_source">
-										<span class="rec-src-link">
-											(Video - Markets)
+
+							{{#market}}
+								<li class="odb_li ob-recIdx-0  ob-odd">
+									<div class="ob-text-content">
+	          							<a target="_self" onclick="" href="{{link}}" class="rec-link">
+	          								{{title}}
+	          							</a>
+	    								<span class="ob_txtual_Icon">
 										</span>
-									</span>
-								</div>
-							</li>
-							<li class="odb_li ob-recIdx-1  ob-even">
-								<div class="ob-text-content">
-          							<a target="_self" onclick="" href="http://www.foxbusiness.com/economy-policy/2013/11/27/consumer-confidence/" onmousedown="this.href='http://traffic.outbrain.com/network/redir?key=130c2cea5e70e7238cba896e9d991efe&amp;rdid=89310589&amp;type=ORL_/NA_ny&amp;in-site=false&amp;idx=1&amp;req_id=3b47cdaf687e4596c212782448d87db2&amp;agent=blog_JS_rec&amp;recMode=8&amp;reqType=2&amp;wid=133&amp;imgType=0&amp;refPub=296&amp;prs=false&amp;scp=false&amp;origSrc=58747';" rel="" class="rec-link">
-          								Consumer Sentiment Rises More than Expected in Late November
-          							</a>
-    								<span class="ob_source">
-    									<span class="rec-src-link">
-    										(Fox Business)
-    									</span>
-    								</span>
-    							</div>
-    						</li>
-    						<li class="odb_li ob-recIdx-2  ob-odd">
-    							<div class="ob-text-content">
-          							<a target="_self" onclick="" href="http://smallbusiness.foxbusiness.com/marketing-sales/2013/11/27/4-types-holiday-shoppers-and-how-to-market-to-them/" onmousedown="this.href='http://traffic.outbrain.com/network/redir?key=e2d2b5d88341019fd9c7668f6723cf75&amp;rdid=89310589&amp;type=ORL_/NA_ny&amp;in-site=false&amp;idx=2&amp;req_id=3b47cdaf687e4596c212782448d87db2&amp;agent=blog_JS_rec&amp;recMode=8&amp;reqType=2&amp;wid=133&amp;imgType=0&amp;refPub=296&amp;prs=false&amp;scp=false&amp;origSrc=58747';" rel="" class="rec-link">
-          								4 Types of Holiday Shoppers and How to Market to Them
-          							</a>
-    								<span class="ob_source">
-    									<span class="rec-src-link">
-    										(Small Business - Marketing and Sales)
-    									</span>
-    								</span>
-    							</div>
-							</li>
+										<span class="ob_source">
+											<span class="rec-src-link">
+												(Video - Markets)
+											</span>
+										</span>
+									</div>
+								</li>
+							{{/market}}
+
 						</ul>
 					</div>
 				</div>
@@ -316,27 +291,27 @@
 	    	<div class="component latest-news" data-vr-zone="latest-news">
 				<h2 class="title">Latest News</h2>
 					
-					{{#left}}
-						<ul class="list">
-							<li data-vr-contentbox="">
-								<a href="{{link}}">
-									{{title}}
-								</a>
-							</li>
-						</ul>
-					{{/left}}
+					<ul class="list">
+						{{#left}}
+								<li data-vr-contentbox="">
+									<a href="{{link}}">
+										{{title}}
+									</a>
+								</li>
+						{{/left}}
+					</ul>
 
 					<!-- NEW COLUMN -->
-
-					{{#right}}
-						<ul class="list last">
+					
+					<ul class="list last">
+						{{#right}}
 							<li data-vr-contentbox="">
 								<a href="{{link}}">
 									{{title}}
 								</a>
 							</li>
-						</ul>
-					{{/right}}
+						{{/right}}
+					</ul>
 
 				</div> <!-- /component latest-news -->
 			</div> <!-- /section-9 -->
@@ -352,200 +327,53 @@
    
    		<div class="section-14">
 			<div class="section section-first" id="features-faces">
-    			<div class="component" data-vr-zone="features-faces-1">
+				  {{#features}}
+
+    				<div class="component" data-vr-zone="features-faces-1">
         			<h2 class="title">
         				Features &amp; Faces
         			</h2>
         			<ul class="list-ext-3">
-						<li class="first" data-vr-contentbox="">
-							<p class="media">
-								<a href="http://www.foxnews.com/tech/2013/12/02/8-best-cyber-monday-tech-deals/?intcmp=features">
-									<img class="unloaded_img" src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/296762_Fujifilm_FinePix_digicam.jpg" dest_src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/296762_Fujifilm_FinePix_digicam.jpg" alt="8 best Cyber Monday deals" width="121" original="/images/clear.gif" style="display: block; width: 121px; height: 91px;">
-								</a>
-							</p>
-							<h3>
-								<a href="http://www.foxnews.com/tech/2013/12/02/8-best-cyber-monday-tech-deals/?intcmp=features">
-									8 best Cyber Monday deals
-								</a>
-							</h3>
-							<p class="summary"></p>
-						</li>
-						<li data-vr-contentbox="">
-							<p class="media">
-								<a href="http://www.foxnews.com/entertainment/2013/12/02/joe-jonas-demi-miley-introduced-me-to-weed-not-a-virgin/?intcmp=features">
-									<img class="unloaded_img" src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/294931_jonas_miley_121.jpg" dest_src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/294931_jonas_miley_121.jpg" alt="Joe: Miley made me try drugs" width="121" original="/images/clear.gif" style="display: block; width: 121px; height: 91px;">
-								</a>
-							</p>
-							<h3>
-								<a href="http://www.foxnews.com/entertainment/2013/12/02/joe-jonas-demi-miley-introduced-me-to-weed-not-a-virgin/?intcmp=features">
-									Joe: Miley made me try drugs
-								</a>
-							</h3>
-							<p class="summary">
-							</p>
-						</li>
-						<li data-vr-contentbox="">
-							<p class="media">
-								<a href="http://www.foxnews.com/tech/2013/12/02/xbox-one-dominates-playstation-4-in-black-friday-console-war/?intcmp=features">
-									<img class="unloaded_img" src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/298809_xbox-one-controller-sign.jpg" dest_src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/298809_xbox-one-controller-sign.jpg" alt="Xbox One Dominates PS4" width="121" original="/images/clear.gif" style="display: block; width: 121px; height: 91px;">
-								</a>
-							</p>
-							<h3>
-								<a href="http://www.foxnews.com/tech/2013/12/02/xbox-one-dominates-playstation-4-in-black-friday-console-war/?intcmp=features">
-									Xbox One Dominates PS4
-								</a>
-							</h3>
-							<p class="summary"></p>
-						</li>
-						<li data-vr-contentbox="">
-							<p class="media">
-								<a href="http://www.foxnews.com/entertainment/2013/12/02/brooke-burns-in-hollywood-if-go-to-church-youre-crazy/?intcmp=features"><img class="unloaded_img" src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/293513_burns_121.jpg" dest_src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/293513_burns_121.jpg" alt="Burns: 'Crazy' Christian in LA" width="121" original="/images/clear.gif" style="display: block; width: 121px; height: 91px;"></a></p>
-							    <h3><a href="http://www.foxnews.com/entertainment/2013/12/02/brooke-burns-in-hollywood-if-go-to-church-youre-crazy/?intcmp=features">Burns: 'Crazy' Christian in LA</a></h3>
-							        <p class="summary"></p>
-						</li>
-						<li data-vr-contentbox="">
-							<p class="media">
-								<a href="http://www.foxnews.com/leisure/2013/12/02/ram-to-introduce-compact-promaster-city-van-in-2015/?intcmp=features">
-									<img class="unloaded_img" src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/296148_doblo-121.jpg" dest_src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/296148_doblo-121.jpg" alt="Ram Trucks Doblos down" width="121" original="/images/clear.gif" style="display: block; width: 121px; height: 91px;">
-								</a>
-							</p>
-							<h3>
-								<a href="http://www.foxnews.com/leisure/2013/12/02/ram-to-introduce-compact-promaster-city-van-in-2015/?intcmp=features">
-									Ram Trucks Doblos down
-								</a>
-							</h3>
-							<p class="summary"></p>
-						</li>
-						<li data-vr-contentbox="">
-							<p class="media">
-								<a href="http://www.foxnews.com/entertainment/2013/12/02/orange-county-choppers-switches-networks-goes-back-to-basics-bike-building/?intcmp=features">
-									<img class="unloaded_img" src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/298536_choppers_121.jpg" dest_src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/298536_choppers_121.jpg" alt="'OC Choppers' revamped" width="121" original="/images/clear.gif" style="display: block; width: 121px; height: 91px;">
-								</a>
-							</p>
-							<h3>
-								<a href="http://www.foxnews.com/entertainment/2013/12/02/orange-county-choppers-switches-networks-goes-back-to-basics-bike-building/?intcmp=features">
-									'OC Choppers' revamped
-								</a>
-							</h3>
-							<p class="summary"></p>
-						</li>
-						<li data-vr-contentbox="">
-							<p class="media">
-								<a href="http://www.foxnews.com/health/2013/12/02/what-best-for-weight-loss-cardio-or-strength-training/?intcmp=features">
-									<img class="unloaded_img" src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/293511_121_WomenWeightLifting.jpg" dest_src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/293511_121_WomenWeightLifting.jpg" alt="Cardio vs. strength training" width="121" original="/images/clear.gif" style="display: block; width: 121px; height: 91px;">
-								</a>
-							</p>
-							<h3>
-								<a href="http://www.foxnews.com/health/2013/12/02/what-best-for-weight-loss-cardio-or-strength-training/?intcmp=features">
-									Cardio vs. strength training
-								</a>
-							</h3>
-							<p class="summary"></p>
-						</li>
+        				{{#row1}}
+								<li class="first" data-vr-contentbox="">
+									<p class="media">
+										<a href="http://www.foxnews.com/tech/2013/12/02/8-best-cyber-monday-tech-deals/?intcmp=features">
+											<img class="unloaded_img" src="{{image}}" width="121" original="/images/clear.gif" style="display: block; width: 121px;">
+										</a>
+									</p>
+									<h3 style="line-height: 15px;">
+										<a href="{{link}}" style="font-size: 12px;">
+											{{title}}
+										</a>
+									</h3>
+									<p class="summary"></p>
+								</li>
+								{{/row1}}
         			</ul>
-    			</div>
+    				</div>
 
-    			<!-- NEW ROW -->
+    				<!-- NEW ROW -->
 
-    			<div class="component" data-vr-zone="features-faces-2">
+    				<div class="component" data-vr-zone="features-faces-2">
         			<ul class="list-ext-3">
-							<li data-vr-contentbox="">
-								<p class="media">
-									<a href="http://www.foxnews.com/travel/2013/12/02/10-worlds-weirdest-airports/?intcmp=features">
-										<img class="unloaded_img" src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/293510_weird_airports121.jpg" dest_src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/293510_weird_airports121.jpg" alt="Yes, a train is on the runway" width="121" original="/images/clear.gif" style="display: block; width: 121px; height: 91px;">
-									</a>
-								</p>
-								<h3>
-									<a href="http://www.foxnews.com/travel/2013/12/02/10-worlds-weirdest-airports/?intcmp=features">
-										Yes, a train is on the runway
-									</a>
-								</h3>
-								<p class="summary"></p>
-							</li>
-							<li data-vr-contentbox="">
-								<p class="media">
-									<a href="http://www.foxnews.com/science/2013/12/02/skulls-found-in-mass-grave-in-china-reveal-ancient-female-sacrifice/?intcmp=features">
-										<img class="unloaded_img" src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/293502_feature-shimao-ruins-sacrifice-site.jpg" dest_src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/293502_feature-shimao-ruins-sacrifice-site.jpg" alt="Ancient female&lt;br&gt;sacrifice" width="121" original="/images/clear.gif" style="display: block; width: 121px; height: 91px;">
-									</a>
-								</p>
-								<h3>
-									<a href="http://www.foxnews.com/science/2013/12/02/skulls-found-in-mass-grave-in-china-reveal-ancient-female-sacrifice/?intcmp=features">
-										Ancient female<br>
-										sacrifice
-									</a>
-								</h3>
-								<p class="summary"></p>
-							</li>
-							<li data-vr-contentbox="">
-								<p class="media">
-									<a href="http://www.foxnews.com/slideshow/entertainment/2013/12/02/playboy-celebrity-cover-girls-kate-moss/?intcmp=features#slide=1">
-										<img class="unloaded_img" src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/293514_playboy_stars_121.jpg" dest_src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/293514_playboy_stars_121.jpg" alt="Celebrity Playboy cover gals" width="121" original="/images/clear.gif" style="display: block; width: 121px; height: 91px;">
-									</a>
-								</p>
-								<h3>
-									<a href="http://www.foxnews.com/slideshow/entertainment/2013/12/02/playboy-celebrity-cover-girls-kate-moss/?intcmp=features#slide=1">
-										Celebrity Playboy cover gals
-									</a>
-								</h3>
-								<p class="summary"></p>
-							</li>
-							<li data-vr-contentbox="">
-								<p class="media">
-									<a href="http://www.foxnews.com/us/2013/12/02/new-york-magazine-to-go-biweekly-in-2014/?intcmp=features">
-										<img class="unloaded_img" src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/293507_nymag.jpg" dest_src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/293507_nymag.jpg" alt="NY Mag to go &lt;br&gt; biweekly" width="121" original="/images/clear.gif" style="display: block; width: 121px; height: 91px;">
-									</a>
-								</p>
-								<h3>
-									<a href="http://www.foxnews.com/us/2013/12/02/new-york-magazine-to-go-biweekly-in-2014/?intcmp=features">
-										NY Mag to go <br>
-										biweekly
-									</a>
-								</h3>
-								<p class="summary"></p>
-							</li>
-							<li data-vr-contentbox="">
-								<p class="media">
-									<a href="http://www.foxnews.com/entertainment/2013/12/02/reports-miranda-kerr-dating-australian-billionaire-after-orlando-bloom-split/?intcmp=features">
-										<img class="unloaded_img" src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/295151_kerr_121.jpg" dest_src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/295151_kerr_121.jpg" alt="Kerr has a new man?" width="121" original="/images/clear.gif" style="display: block; width: 121px; height: 91px;">
-									</a>
-								</p>
-								<h3>
-									<a href="http://www.foxnews.com/entertainment/2013/12/02/reports-miranda-kerr-dating-australian-billionaire-after-orlando-bloom-split/?intcmp=features">
-										Kerr has a new man?
-									</a>
-								</h3>
-								<p class="summary"></p>
-							</li>
-							<li data-vr-contentbox="">
-								<p class="media">
-									<a href="http://www.foxbusiness.com/business-leaders/2013/12/02/one-womans-unpredictable-art-futuring/?intcmp=fbfeatures" onclick="window.open(this.href);return false;">
-										<img class="unloaded_img" src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/299235_ford.jpg" dest_src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/299235_ford.jpg" alt="Woman sees Ford's future" width="121" original="/images/clear.gif" style="display: block; width: 121px; height: 91px;">
-									</a>
-								</p>
-								<h3>
-									<a href="http://www.foxbusiness.com/business-leaders/2013/12/02/one-womans-unpredictable-art-futuring/?intcmp=fbfeatures" onclick="window.open(this.href);return false;">
-										Woman sees Ford's future
-									</a>
-								</h3>
-								<p class="summary"></p>
-							</li>
-							<li class="video video-ct" data-vr-contentbox="">
-								<p class="media m">
-									<a href="http://www.foxnews.com/on-air/americas-newsroom/index.html?intcmp=features#/v/2885792145001" style="position: relative; display: block; padding: 0px;">
-										<div class="media-overlay" style="position: absolute; right: 3px; bottom: 4px; width: 24px; min-height: 24px; background-image: url(http://global.fncstatic.com/static/v/all/img/vd-overlay_24.png); background-position: 0px 0px; background-repeat: no-repeat no-repeat;">
-										</div>
-										<img class="unloaded_img" src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/293509_121_120213_an_robot.jpg" dest_src="http://a57.foxnews.com/www.foxnews.com/ucat/images/121/91/293509_121_120213_an_robot.jpg" alt="Future of law enforcement?" width="121" original="/images/clear.gif" style="display: block; width: 121px; height: 91px;">
-									</a>
-								</p>
-								<h3>
-									<a href="http://www.foxnews.com/on-air/americas-newsroom/index.html?intcmp=features#/v/2885792145001" style="position: relative;">
-										Future of law enforcement?
-									</a>
-								</h3>
-								<p class="summary"></p>
-							</li>
-						</ul><!-- /list-ext-3 -->
-					</div>
+        				{{#row2}}
+								<li class="first" data-vr-contentbox="">
+									<p class="media">
+										<a href="http://www.foxnews.com/tech/2013/12/02/8-best-cyber-monday-tech-deals/?intcmp=features">
+											<img class="unloaded_img" src="{{image}}" width="121" original="/images/clear.gif" style="display: block; width: 121px;">
+										</a>
+									</p>
+									<h3 style="line-height: 15px;">
+										<a href="{{link}}" style="font-size: 12px;">
+											{{title}}
+										</a>
+									</h3>
+									<p class="summary"></p>
+								</li>
+								{{/row2}}
+        			</ul>
+						</div>
+					{{/features}}
 				</div>
 			</div>
  
@@ -611,7 +439,7 @@
 											Health
 										</a>
 										<span class="arrow">
-										 ›
+										 &#8250;
 										</span>
 									</h2>
 								</span>
@@ -786,7 +614,7 @@
 .HOP_2 .ob-recIdx-0 .strip-rec-link-title {font-weight: bold;}
 .HOP_2 .ob-recIdx-0 .strip-rec-link-title:hover {text-decoration: underline !important;}
 </style>
-	<span class="ob_org_header"><h2 class="title"><a href="http://www.foxbusiness.com/index.html" target="_top">Business</a><span class="arrow"> ›</span></h2></span>	    <div class="ob_container">
+	<span class="ob_org_header"><h2 class="title"><a href="http://www.foxbusiness.com/index.html" target="_top">Business</a><span class="arrow"> &#8250;</span></h2></span>	    <div class="ob_container">
 	<div class="ob_container_recs">
                         <a class="item-link-container ob-odd" href="http://www.foxbusiness.com/personal-finance/2013/11/01/13-things-not-to-buy-on-black-friday/" data-redirect="http://traffic.outbrain.com/network/redir?key=e3655ed8ab1b6dfd6c63e5bcea65f774&amp;rdid=89310589&amp;type=ORL_/NA_ny&amp;in-site=false&amp;idx=0&amp;req_id=1f4e26660bc576450e2f69951ea88e6c&amp;agent=blog_JS_rec&amp;recMode=11&amp;reqType=2&amp;wid=139&amp;imgType=2&amp;refPub=296&amp;prs=false&amp;scp=false&amp;origSrc=58747" onclick="" onmousedown="outbrain.recClicked(event,this);" target="_self" rel="">
     <div class="item-container ob-recIdx-0   ">
@@ -972,7 +800,7 @@
 .HOP_6 .ob-recIdx-0 .strip-rec-link-title {font-weight: bold;}
 .HOP_6 .ob-recIdx-0 .strip-rec-link-title:hover {text-decoration: underline !important;}
 </style>
-	<span class="ob_org_header"><h2 class="title"><a href="http://www.foxnews.com/tech/index.html" target="_top">Technology</a><span class="arrow"> ›</span></h2></span>	    <div class="ob_container">
+	<span class="ob_org_header"><h2 class="title"><a href="http://www.foxnews.com/tech/index.html" target="_top">Technology</a><span class="arrow"> &#8250;</span></h2></span>	    <div class="ob_container">
 	<div class="ob_container_recs">
                         <a class="item-link-container ob-odd" href="http://www.foxnews.com/tech/2013/12/02/8-best-cyber-monday-tech-deals/" data-redirect="http://traffic.outbrain.com/network/redir?key=7a9e1f5fa1e4122086948636f04344c3&amp;rdid=89310589&amp;type=ORL_/NA_ny&amp;in-site=false&amp;idx=0&amp;req_id=9b77136d268da3e876f1a82d51a59b61&amp;agent=blog_JS_rec&amp;recMode=11&amp;reqType=2&amp;wid=154&amp;imgType=2&amp;refPub=296&amp;prs=false&amp;scp=false&amp;origSrc=58747" onclick="" onmousedown="outbrain.recClicked(event,this);" target="_self" rel="">
     <div class="item-container ob-recIdx-0   ">
@@ -1111,7 +939,7 @@
  <div id="qu_channel_8" class="ad qu"></div>
 
 						<div class="section section-first">
-							<h2 class="title"><a href="http://www.foxnews.com/travel/index.html">Travel</a><span class="arrow"> ›</span></h2>
+							<h2 class="title"><a href="http://www.foxnews.com/travel/index.html">Travel</a><span class="arrow"> &#8250;</span></h2>
 <ul class="list-ext-7" data-vr-zone="section-bucket-4">
 <li class="first" data-vr-contentbox=""><a href="http://video.foxnews.com/v/2886489640001/travel-websites-offering-cyber-monday-deals/?intcmp=HPBucket&amp;playlist_id=1034196603001">
 <img dest_src="http://a57.foxnews.com/media2.foxnews.com/thumbnails/i/120213/60/60/120213_hn_travel_640.jpg" height="60" width="60" alt="" class="unloaded_img" original="/images/clear.gif" style="display: block; width: 60px; height: 60px;" src="http://a57.foxnews.com/media2.foxnews.com/thumbnails/i/120213/60/60/120213_hn_travel_640.jpg">
@@ -1126,7 +954,7 @@ Travel websites offering Cyber Monday deals&nbsp;<img dest_src="http://www.foxne
 						</div>
 						
 						<div class="section">
-							<h2 class="title"><a href="http://www.foxnews.com/opinion/index.html">Opinion</a><span class="arrow"> ›</span></h2>
+							<h2 class="title"><a href="http://www.foxnews.com/opinion/index.html">Opinion</a><span class="arrow"> &#8250;</span></h2>
 <ul class="list-ext-7" data-vr-zone="section-bucket-5">
 <li class="first" data-vr-contentbox=""><a href="http://video.foxnews.com/v/2887068946001/grapevine-he-said-she-said/?intcmp=HPBucket&amp;playlist_id=940325740001">
 <img dest_src="http://a57.foxnews.com/media2.foxnews.com/thumbnails/i/120213/60/60/120213_sr_grapevine_640.jpg" height="60" width="60" alt="" class="unloaded_img" original="/images/clear.gif" style="display: block; width: 60px; height: 60px;" src="http://a57.foxnews.com/media2.foxnews.com/thumbnails/i/120213/60/60/120213_sr_grapevine_640.jpg">
@@ -1140,7 +968,7 @@ Grapevine: 'He' said, 'she' said&nbsp;<img dest_src="http://www.foxnews.com/i/re
 						</div>
 											
 						<div class="section">
-							<h2 class="title"><a href="http://www.foxnews.com/entertainment/index.html">Entertainment</a><span class="arrow"> ›</span></h2>
+							<h2 class="title"><a href="http://www.foxnews.com/entertainment/index.html">Entertainment</a><span class="arrow"> &#8250;</span></h2>
 <ul class="list-ext-7" data-vr-zone="section-bucket-6">
 <li class="first" data-vr-contentbox=""><a href="http://video.foxnews.com/v/2886901973001/hollywood-nation-maria-bellos-modern-family/?intcmp=HPBucket&amp;playlist_id=929831930001">
 <img dest_src="http://a57.foxnews.com/media2.foxnews.com/thumbnails/i/120213/60/60/120213_nation_bello_640.jpg" height="60" width="60" alt="" class="unloaded_img" original="/images/clear.gif" style="display: block; width: 60px; height: 60px;" src="http://a57.foxnews.com/media2.foxnews.com/thumbnails/i/120213/60/60/120213_nation_bello_640.jpg">
@@ -1155,7 +983,7 @@ Hollywood Nation: Maria Bello's 'Modern Family'&nbsp;<img dest_src="http://www.f
 						</div>
 
 						<div class="section">
-							<h2 class="title"><a href="http://www.foxnews.com/politics/">Politics</a><span class="arrow"> ›</span></h2>
+							<h2 class="title"><a href="http://www.foxnews.com/politics/">Politics</a><span class="arrow"> &#8250;</span></h2>
 <ul class="list-ext-7" data-vr-zone="section-bucket-7">
 <li class="first" data-vr-contentbox=""><a href="http://video.foxnews.com/v/2887148340001/did-the-president-make-another-false-claim-about-obamacare/?intcmp=HPBucket&amp;playlist_id=928378949001">
 <img dest_src="http://a57.foxnews.com/media2.foxnews.com/thumbnails/i/120213/60/60/120213_angle_obamapromise2_640.jpg" height="60" width="60" alt="" class="unloaded_img" original="/images/clear.gif" style="display: block; width: 60px; height: 60px;" src="http://a57.foxnews.com/media2.foxnews.com/thumbnails/i/120213/60/60/120213_angle_obamapromise2_640.jpg">
@@ -1170,7 +998,7 @@ Did the president make another false claim about ObamaCare?&nbsp;<img dest_src="
 						</div>
 					
 						<div class="section">
-							<h2 class="title"><a href="http://www.foxnews.com/sports/index.html">Sports</a><span class="arrow"> ›</span></h2>
+							<h2 class="title"><a href="http://www.foxnews.com/sports/index.html">Sports</a><span class="arrow"> &#8250;</span></h2>
 <ul class="list-ext-7" data-vr-zone="section-bucket-8">
 <li class="first" data-vr-contentbox=""><a href="http://video.foxnews.com/v/2872924088001/stadium-collapses-kills-3-at-world-cup-venue-in-brazil/?intcmp=HPBucket&amp;playlist_id=930909752001">
 <img dest_src="http://a57.foxnews.com/media2.foxnews.com/thumbnails/i/112713/60/60/112713_brazil_stadium_640.jpg" height="60" width="60" alt="" class="unloaded_img" original="/images/clear.gif" style="display: block; width: 60px; height: 60px;" src="http://a57.foxnews.com/media2.foxnews.com/thumbnails/i/112713/60/60/112713_brazil_stadium_640.jpg">
@@ -1185,7 +1013,7 @@ Stadium collapses kills 3 at World Cup venue in Brazil&nbsp;<img dest_src="http:
 						</div>
 
 						<div class="section">
-							<h2 class="title"><a href="http://www.foxnews.com/leisure/index.html">Lifestyle</a><span class="arrow"> ›</span></h2>
+							<h2 class="title"><a href="http://www.foxnews.com/leisure/index.html">Lifestyle</a><span class="arrow"> &#8250;</span></h2>
 <ul class="list-ext-7" data-vr-zone="section-bucket-9">
 <li class="first" data-vr-contentbox=""><a href="http://video.foxnews.com/v/2885709626001/this-old-house-names-top-100-new-home-products/?intcmp=HPBucket&amp;playlist_id=931078438001">
 <img dest_src="http://a57.foxnews.com/media2.foxnews.com/thumbnails/i/120213/60/60/120213_ff_gadgets_640.jpg" height="60" width="60" alt="" class="unloaded_img" original="/images/clear.gif" style="display: block; width: 60px; height: 60px;" src="http://a57.foxnews.com/media2.foxnews.com/thumbnails/i/120213/60/60/120213_ff_gadgets_640.jpg">
@@ -1200,7 +1028,7 @@ Stadium collapses kills 3 at World Cup venue in Brazil&nbsp;<img dest_src="http:
 						</div>
 
 						<div class="section">
-							<h2 class="title"><a href="http://www.foxnews.com/world/index.html">World</a><span class="arrow"> ›</span></h2>
+							<h2 class="title"><a href="http://www.foxnews.com/world/index.html">World</a><span class="arrow"> &#8250;</span></h2>
 <ul class="list-ext-7" data-vr-zone="section-bucket-10">
 <li class="first" data-vr-contentbox=""><a href="http://video.foxnews.com/v/2886822717001/mayor-rob-ford-takes-fans-seat-at-football-game/?intcmp=HPBucket&amp;playlist_id=922779230001">
 <img dest_src="http://a57.foxnews.com/media2.foxnews.com/thumbnails/i/120213/60/60/120213_ssr_robford_640.jpg" height="60" width="60" alt="" class="unloaded_img" original="/images/clear.gif" style="display: block; width: 60px; height: 60px;" src="http://a57.foxnews.com/media2.foxnews.com/thumbnails/i/120213/60/60/120213_ssr_robford_640.jpg">
@@ -1215,7 +1043,7 @@ Mayor Rob Ford takes fan's seat at football game&nbsp;<img dest_src="http://www.
 						</div>
 
 						<div class="section">
-							<h2 class="title"><a href="http://magazine.foxnews.com/index.html">Fox News Magazine</a><span class="arrow"> ›</span></h2>
+							<h2 class="title"><a href="http://magazine.foxnews.com/index.html">Fox News Magazine</a><span class="arrow"> &#8250;</span></h2>
 <ul class="list-ext-7" data-vr-zone="section-bucket-11">
 <li class="first" data-vr-contentbox=""><a href="http://magazine.foxnews.com/food-wellness/hot-cocktails-cold-winter-nights?intcmp=HPBucket">
 <img dest_src="http://a57.foxnews.com/magazine.foxnews.com/sites/magazine.foxnews.com/files/styles/60_image_cropped/public/60/60/Hot%20Buttered%20Rum%20Two%20Ways%2060.jpg?itok=trmWPQVK" height="60" width="60" alt="" class="unloaded_img" original="/images/clear.gif" style="display: block; width: 60px; height: 60px;" src="http://a57.foxnews.com/magazine.foxnews.com/sites/magazine.foxnews.com/files/styles/60_image_cropped/public/60/60/Hot%20Buttered%20Rum%20Two%20Ways%2060.jpg?itok=trmWPQVK">
@@ -1280,7 +1108,7 @@ Hot Cocktails for Cold Winter Nights</a></li>
 .HOP_5 .ob-recIdx-0 .strip-rec-link-title {font-weight: bold;}
 .HOP_5 .ob-recIdx-0 .strip-rec-link-title:hover {text-decoration: underline !important;}
 </style>
-	<span class="ob_org_header"><h2 class="title"><a href="http://www.foxnews.com/us/index.html" target="_top">US</a><span class="arrow"> ›</span></h2></span>	    <div class="ob_container">
+	<span class="ob_org_header"><h2 class="title"><a href="http://www.foxnews.com/us/index.html" target="_top">US</a><span class="arrow"> &#8250;</span></h2></span>	    <div class="ob_container">
 	<div class="ob_container_recs">
                         <a class="item-link-container ob-odd" href="http://www.foxnews.com/us/2013/12/02/common-core-academic-standards-force-teachers-to-work-on-critical-thinking-over/" data-redirect="http://traffic.outbrain.com/network/redir?key=01c662cf7c8af04c3a602b6dfec914b6&amp;rdid=89310589&amp;type=ORL_/NA_ny&amp;in-site=false&amp;idx=0&amp;req_id=bd69d21cd399329a92ea4613a74e42e1&amp;agent=blog_JS_rec&amp;recMode=11&amp;reqType=2&amp;wid=153&amp;imgType=2&amp;refPub=296&amp;prs=false&amp;scp=false&amp;origSrc=58747" onclick="" onmousedown="outbrain.recClicked(event,this);" target="_self" rel="">
     <div class="item-container ob-recIdx-0   ">
@@ -1379,7 +1207,7 @@ Hot Cocktails for Cold Winter Nights</a></li>
 						</div>
 
  <div class="section">
-							<h2 class="title"><a href="http://www.foxbusiness.com/personal-finance/retirement/index.html">Retirement</a><span class="arrow"> ›</span></h2>
+							<h2 class="title"><a href="http://www.foxbusiness.com/personal-finance/retirement/index.html">Retirement</a><span class="arrow"> &#8250;</span></h2>
 <ul class="list-ext-7" data-vr-zone="section-bucket-13">
 <li class="first" data-vr-contentbox=""><a href="http://www.foxbusiness.com/investing/2013/11/18/5-ways-to-help-your-parents-prepare-for-retirement/?intcmp=HPBucket" onclick="window.open(this.href);return false;">
 <img dest_src="http://a57.foxnews.com/global.fncstatic.com/static/managed/img/FB/60/60/Retirement-IRA-401k-pension-plan-book-and-nest-egg-with-computer.jpg" height="60" width="60" alt="" class="unloaded_img" original="/images/clear.gif" style="display: block; width: 60px; height: 60px;" src="http://a57.foxnews.com/global.fncstatic.com/static/managed/img/FB/60/60/Retirement-IRA-401k-pension-plan-book-and-nest-egg-with-computer.jpg">
@@ -1394,7 +1222,7 @@ Hot Cocktails for Cold Winter Nights</a></li>
 						</div>
 
 						<div class="section">
-							<h2 class="title"><a href="http://www.foxnews.com/entertainment/movies/index.html">Movies</a><span class="arrow"> ›</span></h2>
+							<h2 class="title"><a href="http://www.foxnews.com/entertainment/movies/index.html">Movies</a><span class="arrow"> &#8250;</span></h2>
 <ul class="list-ext-7" data-vr-zone="section-bucket-14">
 <li class="first" data-vr-contentbox=""><a href="http://video.foxnews.com/v/2885788452001/ron-burgundy-delivers-the-news/?intcmp=HPBucket">
 <img dest_src="http://a57.foxnews.com/a57.foxnews.com/media2.foxnews.com/thumbnails/i/120213/640/360/60/60/120213_an_burgundy_640.jpg" height="60" width="60" alt="" class="unloaded_img" original="/images/clear.gif" style="display: block; width: 60px; height: 60px;" src="http://a57.foxnews.com/a57.foxnews.com/media2.foxnews.com/thumbnails/i/120213/640/360/60/60/120213_an_burgundy_640.jpg">
@@ -1640,43 +1468,35 @@ Hot Cocktails for Cold Winter Nights</a></li>
 				</div>
 
 
-				<div class="component trending-descending">
-    <h2 class="title"><a href="http://www.foxnews.com/trending/">FOX NEWS NOW</a></h2>
-    <div class="c-item c-item-first">
-        <div class="dv-list dv-list-2">
-            <ul class="dv-encap">
-                <li class="dv-item dv-item-first trending-1">
-                    <p>1</p>
-                    <h3><a href="http://www.foxnews.com/politics/2013/12/02/high-court-ends-liberty-u-lawsuit-over-health-law/?intcmp=trending">High court ends Liberty University lawsuit over ObamaCare</a></h3>
-                </li>
-                <li class="dv-item trending-2">
-                    <p>2</p>
-                    <h3><a href="http://www.foxnews.com/politics/2013/12/02/pentagon-floats-plan-to-close-us-commissaries/?intcmp=trending">Pentagon floats plan to close US commissaries</a></h3>
-                </li>
-                <li class="dv-item trending-3">
-                    <p>3</p>
-                    <h3><a href="http://www.foxnews.com/entertainment/2013/12/02/officials-say-speed-factor-in-crash-that-killed-fast-and-furious-star-paul/?intcmp=trending">Officials investigating if drag racing caused crash that killed ‘Fast &amp; Furious’ star Paul Walker</a></h3>
-                </li>
-                <li class="dv-item trending-4">
-                    <p>4</p>
-                    <h3><a href="http://www.foxnews.com/us/2013/12/02/metro-north-train-was-traveling-at-more-than-80-mph-at-time-fatal-crash-ntsb/?intcmp=trending">Metro-North train was traveling at more than 80 mph at time of fatal crash, NTSB says</a></h3>
-                </li>
-                <li class="dv-item dv-item-last trending-5">
-                    <p>5</p>
-                    <h3><a href="http://www.foxnews.com/entertainment/2013/12/02/brooke-burns-in-hollywood-if-go-to-church-youre-crazy/?intcmp=trending">Brooke Burns: In Hollywood, 'if you go to church you're crazy'</a></h3>
-                </li>
+		<div class="component trending-descending">
+	    <h2 class="title"><a href="http://www.foxnews.com/trending/">FOX NEWS NOW</a></h2>
+	    <div class="c-item c-item-first">
+	        <div class="dv-list dv-list-2">
+	            <ul class="dv-encap">
+	            		{{#foreach popular}}
+		                <li class="dv-item {{#if $last}}dv-item-last{{/if}} {{#if $first}}dv-item-first{{/if}} trending-{{$indexhuman}}">
+		                    <p>{{$indexhuman}}</p>
+		                    <h3>
+		                    	<a href="{{link}}">
+		                    		{{title}}
+		                    	</a>
+		                    </h3>
+		                </li>
+	    						{{/foreach}}
+	            </ul>
+	        </div>
+	    </div>
 
-            </ul>
-        </div>
-    </div>
+
+
     <div class="c-item c-item-last">
         <div class="c-foot">
-            <div class="additional"><a href="http://trending.foxnews.com">See all trends</a><span>&nbsp;›</span></div>
+            <div class="additional"><a href="http://trending.foxnews.com">See all trends</a><span>&nbsp;&#8250;</span></div>
             <div class="ad dc" id="trending-292x30"></div>
         </div>
     </div>
 </div> <!-- /trending-descending -->
-  <div class="rrpollwidget"><h2 class="title">Question of the Day</h2><div class="poll-widget"><div class="poll-item"><div class="column1"><p><span>Q:</span> Today is Cyber Monday, and retailers are promoting buying online. Do you feel safe making online purchases?</p><form action=""><div><input type="radio" name="Option4082893" value="10130571"><span>Yes</span></div><div><input type="radio" name="Option4082893" value="10130573"><span>No</span></div><div><input type="radio" name="Option4082893" value="10130575"><span>I'm not sure</span></div><input type="submit" class="btn g" value="Vote" name="vote"></form><div class="percentage-bars"></div></div><div class="column2"><a href="http://nation.foxnews.com/poll/index.html">See All Questions <span>›</span></a>​<ul style="display:none;"><li><a href="http://nation.foxnews.com/poll/2013/12/02/today-is-cyber-monday-and-retailers-are-promoting-buying-online-do-feel-safe/"><img src="//global.fncstatic.com/static/v/all/img/right-rail-widget1.gif">Full Details</a></li><li><a href="http://nation.foxnews.com/poll/2013/12/02/today-is-cyber-monday-and-retailers-are-promoting-buying-online-do-feel-safe/"><img src="//global.fncstatic.com/static/v/all/img/right-rail-widget2.gif">Discuss</a></li><li><a href="http://nation.foxnews.com/poll/2013/12/02/today-is-cyber-monday-and-retailers-are-promoting-buying-online-do-feel-safe/"><img src="//global.fncstatic.com/static/v/all/img/right-rail-widget3.gif">View Map</a></li></ul></div></div></div></div>  <div id="local-news" class="component local-news">
+  <div class="rrpollwidget"><h2 class="title">Question of the Day</h2><div class="poll-widget"><div class="poll-item"><div class="column1"><p><span>Q:</span> Today is Cyber Monday, and retailers are promoting buying online. Do you feel safe making online purchases?</p><form action=""><div><input type="radio" name="Option4082893" value="10130571"><span>Yes</span></div><div><input type="radio" name="Option4082893" value="10130573"><span>No</span></div><div><input type="radio" name="Option4082893" value="10130575"><span>I'm not sure</span></div><input type="submit" class="btn g" value="Vote" name="vote"></form><div class="percentage-bars"></div></div><div class="column2"><a href="http://nation.foxnews.com/poll/index.html">See All Questions <span>&#8250;</span></a>​<ul style="display:none;"><li><a href="http://nation.foxnews.com/poll/2013/12/02/today-is-cyber-monday-and-retailers-are-promoting-buying-online-do-feel-safe/"><img src="//global.fncstatic.com/static/v/all/img/right-rail-widget1.gif">Full Details</a></li><li><a href="http://nation.foxnews.com/poll/2013/12/02/today-is-cyber-monday-and-retailers-are-promoting-buying-online-do-feel-safe/"><img src="//global.fncstatic.com/static/v/all/img/right-rail-widget2.gif">Discuss</a></li><li><a href="http://nation.foxnews.com/poll/2013/12/02/today-is-cyber-monday-and-retailers-are-promoting-buying-online-do-feel-safe/"><img src="//global.fncstatic.com/static/v/all/img/right-rail-widget3.gif">View Map</a></li></ul></div></div></div></div>  <div id="local-news" class="component local-news">
 			    	<h2 class="title">Regional News<span class="local-news-zipcode-display">&nbsp;(NY)</span></h2>
 			    	<form action="#" method="get">
 			          	<fieldset>

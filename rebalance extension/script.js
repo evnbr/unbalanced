@@ -1,11 +1,75 @@
 var feed_url = {
-  news: "http://america.aljazeera.com/content/ajam/articles.rss",
-  // news: "http://rss.nytimes.com/services/xml/rss/nyt/InternationalHome.xml",
-  video: "http://www.nytimes.com/video/opinion/?rss=1&pagewanted=all",
+  news: {
+    url: "http://america.aljazeera.com/content/ajam/articles.rss",
+    helper: news_loaded,
+  },
+  video: {
+    url: "http://www.nytimes.com/video/opinion/?rss=1&pagewanted=all",
+    helper: nyt_loaded,
+  },
+  dealbook: {
+    url: "http://dealbook.nytimes.com/feed/?pagewanted=all",
+    helper: news_loaded,
+  },
+  arts: {
+    url: "http://rss.nytimes.com/services/xml/rss/nyt/Arts.xml",
+    helper: news_loaded,
+  },
+  popular: {
+    url: "http://rss.nytimes.com/services/xml/rss/nyt/MostShared.xml",
+    helper: news_loaded,
+  },
+  // world: {
+  //   url: "http://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+  //   helper: news_loaded,
+  // },
+  // us: {
+  //   url: "http://rss.nytimes.com/services/xml/rss/nyt/US.xml",
+  //   helper: news_loaded
+  // },
+  // politics: {
+  //   url: "http://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
+  //   helper: news_loaded,
+  // },
+  // newyork: {
+  //   url: "http://rss.nytimes.com/services/xml/rss/nyt/NYRegion.xml",
+  //   helper: news_loaded,
+  // },
+  business: {
+    url: "http://rss.nytimes.com/services/xml/rss/nyt/Business.xml",
+    helper: news_loaded,
+  },
+  // technology: {
+  //   url: "http://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
+  //   helper: news_loaded,
+  // },
+  // sports: {
+  //   url: "http://rss.nytimes.com/services/xml/rss/nyt/Sports.xml",
+  //   helper: news_loaded,
+  // },
+  // science: {
+  //   url: "http://rss.nytimes.com/services/xml/rss/nyt/Science.xml",
+  //   helper: news_loaded,
+  // },
+  // health: {
+  //   url: "http://rss.nytimes.com/services/xml/rss/nyt/Health.xml",
+  //   helper: news_loaded,
+  // },
+  // style: {
+  //   url: "http://rss.nytimes.com/services/xml/rss/nyt/FashionandStyle.xml",
+  //   helper: news_loaded,
+  // },
+  // opinion: {
+  //   url: "http://topics.nytimes.com/top/opinion/editorialsandoped/editorials/index.html?rss=1",
+  //   helper: news_loaded,
+  //},
 }
+// news: "http://rss.nytimes.com/services/xml/rss/nyt/InternationalHome.xml",
 
 var feed_data = {};
+var new_html = "";
 
+add_handlebar_helper();
 
 
 google.load("feeds", "1");
@@ -13,24 +77,25 @@ google.setOnLoadCallback(onload_makefeeds);
 
 function onload_makefeeds() {
 
-  news = new google.feeds.Feed(feed_url.news);
-  news.includeHistoricalEntries();
-  news.setNumEntries(30);
-  news.setResultFormat(google.feeds.Feed.MIXED_FORMAT);
+  var f = {};
 
+  for(prop in feed_url) {
+    var newfeed = new google.feeds.Feed(feed_url[prop].url);
+    newfeed.includeHistoricalEntries();
+    newfeed.setNumEntries(30);
+    newfeed.setResultFormat(google.feeds.Feed.MIXED_FORMAT);
+    f[prop] = newfeed; 
+  }
 
-  vids = new google.feeds.Feed(feed_url.video);
-  vids.includeHistoricalEntries();
-  vids.setNumEntries(30);
-  vids.setResultFormat(google.feeds.Feed.MIXED_FORMAT);
-
-
-  // var query = 'site:cnn.com president';
-  // google.feeds.findFeeds(query, findDone);
-
-  news.load(news_loaded);
-  vids.load(vids_loaded);
+  f.news.load(news_loaded);
+  f.video.load(function(dat) {    nyt_loaded(dat, "video")}   );
+  f.business.load(function(dat) { nyt_loaded(dat, "business") });
+  f.dealbook.load(function(dat) { nyt_loaded(dat, "dealbook") });
+  f.arts.load(function(dat) {     nyt_loaded(dat, "arts")     });
+  f.popular.load(function(dat) {  nyt_loaded(dat, "popular")  });
 }
+
+
 
 function news_loaded(result) {
   if (!result.error) {
@@ -47,7 +112,10 @@ function news_loaded(result) {
   }
 }
 
-function vids_loaded(result) {
+
+
+function nyt_loaded(result, name) {
+  console.log(name);
   if (!result.error) {
     // console.log(result.xmlDocument);
     // console.log(result.feed.entries);
@@ -57,16 +125,67 @@ function vids_loaded(result) {
       return el;
     });
 
-    feed_data.vids = processed_feed;
+    feed_data[name] = processed_feed;
+    async_done();
+  }
+}
+
+function biz_loaded(result) {
+  if (!result.error) {
+    // console.log(result.xmlDocument);
+    // console.log(result.feed.entries);
+
+    var processed_feed = result.feed.entries.map(function(el){
+      el.image = $(el.xmlNode).find("[url *= jpg]").attr("url");
+      return el;
+    });
+
+    feed_data.biz = processed_feed;
+    async_done();
+  }
+}
+
+function arts_loaded(result) {
+  if (!result.error) {
+    // console.log(result.xmlDocument);
+    // console.log(result.feed.entries);
+
+    var processed_feed = result.feed.entries.map(function(el){
+      el.image = $(el.xmlNode).find("[url *= jpg]").attr("url");
+      return el;
+    });
+
+    feed_data.arts = processed_feed;
+    async_done();
+  }
+}
+
+function pop_loaded(result) {
+  if (!result.error) {
+    // console.log(result.xmlDocument);
+    // console.log(result.feed.entries);
+
+    var processed_feed = result.feed.entries.map(function(el){
+      el.image = $(el.xmlNode).find("[url *= jpg]").attr("url");
+      return el;
+    });
+
+    feed_data.popular = processed_feed;
     async_done();
   }
 }
 
 function async_done() {
-  if ( feed_data.news && feed_data.vids ) {
+  console.log(Object.keys(feed_data).length);
+  if ( Object.keys(feed_data).length == Object.keys(feed_url).length ) {
     render_context();
   }
 }
+
+
+
+
+
 
 function render_context() {
   var context = {
@@ -92,20 +211,54 @@ function render_context() {
       left: feed_data.news.slice(4, 14),
       right: feed_data.news.slice(14, 24),
     },
-    videos: feed_data.vids.slice(0, 6),
+    videos: feed_data.video.slice(0, 6),
+    market: feed_data.dealbook.slice(0,3),
+    features: {
+      row1: feed_data.arts.slice(0, 7),
+      row2: feed_data.arts.slice(7, 14),
+    },
+    popular: feed_data.popular.slice(0,5),
   }
-  var html = Handlebars.templates.fox(context);
+  console.log("context: " + context);
+  new_html = Handlebars.templates.fox(context);
   
-  chrome.browserAction.onClicked.addListener(function(tab) {
-    var cleaned = addslashes(html).replace(/(\r\n|\n|\r)/gm,"");
-    console.log('console.log(" ' + cleaned + ' ");');
-
-    chrome.tabs.executeScript({
-      code: 'document.getElementById("section").innerHTML = " ' + cleaned + ' ";'
-    });
-  });
 }
+
+
+chrome.browserAction.onClicked.addListener(function(tab) {
+  var cleaned = addslashes(new_html).replace(/(\r\n|\n|\r)/gm,"");
+  console.log('console.log(" ' + cleaned + ' ");');
+
+  chrome.tabs.executeScript({
+    code: 'document.getElementById("section").innerHTML = " ' + cleaned + ' ";'
+  });
+});
+
+
 
 function addslashes( str ) {
     return (str + '').replace(/[\\"']/g, '\\$&').replace(/\u0000/g, '\\0');
+}
+
+
+
+
+
+
+
+
+
+function add_handlebar_helper() {
+  Handlebars.registerHelper("foreach",function(arr,options) {
+    if(options.inverse && !arr.length)
+        return options.inverse(this);
+
+    return arr.map(function(item,index) {
+        item.$index = index;
+        item.$indexhuman = index + 1;
+        item.$first = index === 0;
+        item.$last  = index === arr.length-1;
+        return options.fn(item);
+    }).join('');
+  });
 }
