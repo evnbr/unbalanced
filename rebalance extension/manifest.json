@@ -1,0 +1,17 @@
+{
+  "name": "Rebalanced",
+  "description": "The fox news bubble",
+  "version": "0.1",
+  "permissions": [
+    "activeTab"
+  ],
+  "background": {
+    "page": "background.html",
+    "persistent": false
+  },
+  "content_security_policy": "script-src 'self' https://www.google.com/jsapi https://www.google.com/uds/?file=feeds&v=1; object-src 'self'",
+  "browser_action": {
+    "default_title": "Rebalance page"
+  },
+  "manifest_version": 2
+}

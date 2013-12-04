@@ -1,0 +1,38 @@
+
+Main section
+	Primary story
+		large image
+		large headline
+		summary/synopsis
+		up to 3 other related headlines
+
+	Secondary story x 3
+		image
+		headline
+		up to 3 other related headlines
+
+
+Left sidebar
+	Weather
+	Markets
+		headlines x 3
+	Watch Now
+		video story x 6 
+			image
+			headline
+
+
+Latest news
+	headline x 23
+
+
+Features and faces
+	human interest story x 13
+		image
+		headline
+
+Outgoing subcategories x 14 (health, business, technology, travel, opinion, entertainment, politics, sports )
+	thumbnail
+	medium headline
+	samller headline x 4
+
