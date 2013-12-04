@@ -19,10 +19,10 @@ var feed_url = {
     url: "http://www.nytimes.com/services/xml/rss/nyt/pop_top.xml",
     helper: news_loaded,
   },
-  // world: {
-  //   url: "http://rss.nytimes.com/services/xml/rss/nyt/World.xml",
-  //   helper: news_loaded,
-  // },
+  world: {
+    url: "http://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+    helper: news_loaded,
+  },
   // us: {
   //   url: "http://rss.nytimes.com/services/xml/rss/nyt/US.xml",
   //   helper: news_loaded
@@ -88,11 +88,12 @@ function onload_makefeeds() {
   }
 
   f.news.load(news_loaded);
-  f.video.load(function(dat) {    nyt_loaded(dat, "video")}   );
-  f.business.load(function(dat) { nyt_loaded(dat, "business") });
-  f.dealbook.load(function(dat) { nyt_loaded(dat, "dealbook") });
-  f.arts.load(function(dat) {     nyt_loaded(dat, "arts")     });
-  f.popular.load(function(dat) {  nyt_loaded(dat, "popular")  });
+  f.video.load(function(dat) {      nyt_loaded(dat, "video")}   );
+  f.business.load(function(dat) {   nyt_loaded(dat, "business") });
+  f.dealbook.load(function(dat) {   nyt_loaded(dat, "dealbook") });
+  f.arts.load(function(dat) {       nyt_loaded(dat, "arts")     });
+  f.popular.load(function(dat) {    nyt_loaded(dat, "popular")  });
+  f.world.load(function(dat) {      nyt_loaded(dat, "world")    });
 }
 
 
@@ -125,55 +126,21 @@ function nyt_loaded(result, name) {
       return el;
     });
 
-    feed_data[name] = processed_feed;
+    // Require images for Arts category (--> Features & Faces in template)
+    if (name =="arts") {
+      processed_feed = processed_feed.filter(function(a){
+        return (undefined != a.image);
+      });
+    }
+
+    feed_data[name] = {
+      url: result.feed.link,
+      entries: processed_feed,
+    }
     async_done();
   }
 }
 
-function biz_loaded(result) {
-  if (!result.error) {
-    // console.log(result.xmlDocument);
-    // console.log(result.feed.entries);
-
-    var processed_feed = result.feed.entries.map(function(el){
-      el.image = $(el.xmlNode).find("[url *= jpg]").attr("url");
-      return el;
-    });
-
-    feed_data.biz = processed_feed;
-    async_done();
-  }
-}
-
-function arts_loaded(result) {
-  if (!result.error) {
-    // console.log(result.xmlDocument);
-    // console.log(result.feed.entries);
-
-    var processed_feed = result.feed.entries.map(function(el){
-      el.image = $(el.xmlNode).find("[url *= jpg]").attr("url");
-      return el;
-    });
-
-    feed_data.arts = processed_feed;
-    async_done();
-  }
-}
-
-function pop_loaded(result) {
-  if (!result.error) {
-    // console.log(result.xmlDocument);
-    // console.log(result.feed.entries);
-
-    var processed_feed = result.feed.entries.map(function(el){
-      el.image = $(el.xmlNode).find("[url *= jpg]").attr("url");
-      return el;
-    });
-
-    feed_data.popular = processed_feed;
-    async_done();
-  }
-}
 
 function async_done() {
   console.log(Object.keys(feed_data).length);
@@ -211,13 +178,19 @@ function render_context() {
       left: feed_data.news.slice(4, 14),
       right: feed_data.news.slice(14, 24),
     },
-    videos: feed_data.video.slice(0, 6),
-    market: feed_data.dealbook.slice(0,3),
+    videos: feed_data.video.entries.slice(0, 6),
+    market: feed_data.dealbook.entries.slice(0,3),
     features: {
-      row1: feed_data.arts.slice(0, 7),
-      row2: feed_data.arts.slice(7, 14),
+      row1: feed_data.arts.entries.slice(0, 7),
+      row2: feed_data.arts.entries.slice(7, 14),
     },
-    popular: feed_data.popular.slice(0,5),
+    popular: feed_data.popular.entries.slice(0,5),
+    world: {
+      title: "world",
+      link: feed_data.world.link,
+      first: feed_data.world.entries[0],
+      articles: feed_data.world.entries.slice(1,5)
+    }
   }
   console.log("context: " + context);
   new_html = Handlebars.templates.fox(context);
