@@ -16,7 +16,7 @@ var feed_url = {
     helper: news_loaded,
   },
   popular: {
-    url: "http://rss.nytimes.com/services/xml/rss/nyt/MostShared.xml",
+    url: "http://www.nytimes.com/services/xml/rss/nyt/pop_top.xml",
     helper: news_loaded,
   },
   // world: {
