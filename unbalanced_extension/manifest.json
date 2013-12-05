@@ -1,5 +1,5 @@
 {
-  "name": "Rebalanced",
+  "name": "UnBalanced",
   "description": "The fox news bubble",
   "version": "0.1",
   "permissions": ["tabs", "<all_urls>"],

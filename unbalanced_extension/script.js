@@ -304,7 +304,7 @@ function render_context() {
 // Detect when page has loaded
 // --------
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-  if (tab.url === 'http://www.foxnews.com/') {
+  if (tab.url.indexOf("foxnews.com/") !== -1) {
     var cleaned = addslashes(new_html).replace(/(\r\n|\n|\r)/gm,"");
     console.log("Fox refreshed, injecting");
 
