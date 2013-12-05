@@ -322,7 +322,7 @@ function addslashes( str ) {
 
 
 function get_story_with_image(arr) {
-  console.log(arr);
+  // console.log(arr);
   for (var i = 0; i < arr.length; i++) {
     if (arr[i].image) {
       return arr.splice(i, 1)[0];
