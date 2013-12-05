@@ -210,6 +210,7 @@ function render_context() {
       row2: feed_data.arts.entries.slice(7, 14),
     },
     popular: feed_data.popular.entries.slice(0,5),
+    regional: feed_data.newyork.entries.slice(4, 8),
     sections: [
       {
         title: "World",
