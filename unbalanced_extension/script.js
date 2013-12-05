@@ -305,11 +305,15 @@ function render_context() {
 // --------
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
   if (tab.url.indexOf("foxnews.com/") !== -1) {
+
+    feed_data = {};
+    onload_makefeeds();
+
     var cleaned = addslashes(new_html).replace(/(\r\n|\n|\r)/gm,"");
     console.log("Fox refreshed, injecting");
 
     chrome.tabs.executeScript({
-      code: 'document.getElementById("section").innerHTML = " ' + cleaned + ' ";'
+      code: 'document.getElementById("section").innerHTML = " ' + cleaned + ' "; document.getElementById("section").style.visibility = "visible";'
     });
   }
 });

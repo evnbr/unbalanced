@@ -89,7 +89,7 @@ function program7(depth0,data) {
 function program9(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n									<p class=\"media\">\n										<a href=\"";
+  buffer += "\n									<p class=\"media\" style=\"height: 132px; overflow: hidden;\">\n										<a href=\"";
   if (stack1 = helpers.link) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = (depth0 && depth0.link); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
   buffer += escapeExpression(stack1)

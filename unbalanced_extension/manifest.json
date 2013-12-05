@@ -15,5 +15,12 @@
       "38": "icon38.png"            
     }
   },
+  "content_scripts": [
+    {
+      "matches": ["http://www.foxnews.com/*"],
+      "css": ["hidesection.css"],
+      "run_at": "document_start"
+    }
+  ],
   "manifest_version": 2
 }
