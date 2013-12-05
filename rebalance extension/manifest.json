@@ -2,9 +2,7 @@
   "name": "Rebalanced",
   "description": "The fox news bubble",
   "version": "0.1",
-  "permissions": [
-    "activeTab"
-  ],
+  "permissions": ["tabs", "<all_urls>"],
   "background": {
     "page": "background.html",
     "persistent": false
